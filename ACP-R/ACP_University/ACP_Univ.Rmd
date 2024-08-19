@@ -19,4 +19,89 @@ universite <- read_excel("~/GitHub/SORADATA/ACP-R/Dataset/universite.xlsx")
 str(universite)
 ```
 
+#### Les statistiques descriptives ################
+```{r}
+summary(universite)
+```
+
+```{r}
+aggregate(Master~Doctorat, data = universite, FUN = mean)
+
+```
+
+
+```{r}
+library(ggplot2)
+
+# Préparer les données pour ggplot
+universite_long <- tidyr::pivot_longer(universite, cols = c(`Doctorat-F`, `Doctorat-H`, `Master-F`, `Master-H`), 
+                                       names_to = c("Niveau", "Sexe"), names_sep = "-", values_to = "Valeurs")
+
+# Créer l'histogramme avec ggplot pour Doctorat et Master
+ggplot(universite_long, aes(x = Valeurs, fill = Sexe)) + 
+  geom_histogram(alpha = 0.5, position = "identity") +
+  facet_wrap(~Niveau) +
+  labs(title = "Comparaison Doctorat et Master par Sexe", x = "Valeurs", y = "Fréquence") +
+  scale_fill_manual(values = c("blue", "red", "green", "orange"))
+
+```
+
+```{r}
+library(ggplot2)
+
+# Préparer les données au format long
+universite_long <- tidyr::pivot_longer(universite, cols = c(`Doctorat-F`, `Doctorat-H`, `Master-F`, `Master-H`), 
+                                       names_to = c("Niveau", "Sexe"), names_sep = "-", values_to = "Valeurs")
+
+# Créer le boxplot avec ggplot
+ggplot(universite_long, aes(x = interaction(Niveau, Sexe), y = Valeurs, fill = Sexe)) +
+  geom_boxplot() +
+  labs(title = "Boxplot Doctorat et Master par Sexe", x = "Niveau et Sexe", y = "Valeurs") +
+  scale_fill_manual(values = c("lightblue", "lightpink")) +
+  theme_minimal()
+
+```
+```{r}
+# Calculer le total pour chaque filière
+total_doctorat <- sum(universite$`Doctorat-F`) + sum(universite$`Doctorat-H`)
+total_master <- sum(universite$`Master-F`) + sum(universite$`Master-H`)
+
+# Calculer le total général
+total_global <- total_doctorat + total_master
+
+# Calculer les proportions
+proportion_doctorat <- total_doctorat / total_global
+proportion_master <- total_master / total_global
+
+# Créer un vecteur des proportions
+proportions <- c(proportion_doctorat, proportion_master)
+
+# Créer un vecteur des noms des filières
+filieres <- c("Doctorat", "Master")
+library(ggplot2)
+
+# Préparer les données dans un data frame
+proportions_df <- data.frame(
+  Filiere = filieres,
+  Proportion = proportions
+)
+
+# Créer le barplot avec ggplot2
+ggplot(proportions_df, aes(x = Filiere, y = Proportion, fill = Filiere)) +
+  geom_bar(stat = "identity") +
+  scale_y_continuous(labels = scales::percent, limits = c(0, 1)) +
+  labs(title = "Proportions des Étudiants par niveau d'étude", x = "Niveau d'étude", y = "Proportion") +
+  scale_fill_manual(values = c("lightblue", "lightgreen")) +
+  theme_minimal() +
+  geom_text(aes(label = scales::percent(Proportion)), vjust = -0.5)
+
+```
+
+#### Les corrélations ##############
+
+```{r}
+
+
+
+```
 
