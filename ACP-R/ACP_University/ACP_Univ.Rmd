@@ -97,11 +97,62 @@ ggplot(proportions_df, aes(x = Filiere, y = Proportion, fill = Filiere)) +
 
 ```
 
-#### Les corrélations ##############
+#### ACP via FactomineR ##############
 
 ```{r}
+library(FactoMineR)
+library("factoextra")
+```
+```{r}
+# Sélectionner uniquement les colonnes numériques
+numerical_vars <- sapply(universite, is.numeric)
+
+# Créer un sous-data frame avec uniquement les colonnes numériques
+universite_numeric <- universite[, numerical_vars]
+
+```
+
+
+```{r}
+resultat_ACP<-PCA(universite_numeric, graph = FALSE)
+print(resultat_ACP)
+```
+### Le choix de l'axe ou de dimension ####
+
+```{r}
+valeurspropes<-resultat_ACP$eig
+valeurspropes
+```
+```{r}
+barplot(valeurspropes[,2],names.arg = 1:nrow(valeurspropes),
+        main = "Pourcentage dela variance expliquée par chaque composante",
+        xlab = "Composantes principales",
+        ylab = "Pourcentage de variance expliquée",
+        col = "steelblue")
+lines(x=1:nrow(valeurspropes),valeurspropes[,2],
+      type = "b",pch=19,col="red")
 
 
 
+
+```
+
+### Le cercle de corrélation ou il exite un effet de taille   ###
+```{r}
+fviz_pca_var(resultat_ACP,
+             col.var = "cos2", # Coloration par le cosinus carré
+             gradient.cols = c("#888AFB","#E78800","#FC4E07"), # Définir les couleurs du gradient
+             repel = TRUE, # Éviter le chevauchement des étiquettes
+             title = "Cercle de corrélation des variables") # Titre du graphique
+```
+```{r}
+fviz_pca_ind(resultat_ACP, 
+             col.ind = "cos2",  # Coloration en fonction du cos2
+             gradient.cols = c("blue", "white", "red"),  # Palette de couleurs
+             repel = TRUE) +  # Éviter le chevauchement des étiquettes
+  scale_color_gradient2(low = "blue", mid = "white", high = "red", midpoint = 0.50) +
+  theme_minimal() +
+  labs(title = "Visualisation des individus selon Cos2",
+       color = "Cos2")
 ```
 
