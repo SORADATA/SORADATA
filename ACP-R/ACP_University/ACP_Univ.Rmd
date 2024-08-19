@@ -1,0 +1,22 @@
+---
+title: "ACP_University"
+author: "Moussa"
+date: "2024-08-18"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+#####  Import of dataset ###############
+```{r}
+library(readxl)
+universite <- read_excel("~/GitHub/SORADATA/ACP-R/Dataset/universite.xlsx")
+
+```
+```{r}
+str(universite)
+```
+
+
