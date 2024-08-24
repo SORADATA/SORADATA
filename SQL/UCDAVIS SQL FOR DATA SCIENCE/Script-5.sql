@@ -1,0 +1,1 @@
+UPDATE cheese_production SET value = REPLACE(value, ',', '');
