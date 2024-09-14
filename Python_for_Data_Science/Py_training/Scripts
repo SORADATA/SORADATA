@@ -1,18 +1,3 @@
-# Python Training
-# Formation Python
-
-Ce dépôt contient les scripts et les résultats de ma formation en Python, basés sur le livre *Python pour les SHS*. Les sujets abordés incluent :
-- Les bases de Python
-- La manipulation des données
-- Les visualisations avec `matplotlib`
-- L'analyse statistique
-
-## Chapitre 1 : Visualization avec Python
-
-### Script : 
-
-```python
-# Importer les bibliothèques nécessaires
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -38,6 +23,9 @@ plt.text(5700, 80, 'China')
 
 # Ajouter une grille
 plt.grid(True)
+
+# Sauvegarder le graphique
+plt.savefig('images/scatter_plot_output.png')  # Assure-toi que le dossier 'images' existe
 
 # Afficher le graphique
 plt.show()
