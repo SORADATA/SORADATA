@@ -2,7 +2,10 @@
 title: "ACP_University"
 author: "Moussa"
 date: "2024-08-18"
-output: html_document
+output:
+  html_document: default
+  pdf_document: default
+  word_document: default
 ---
 
 ```{r setup, include=FALSE}
@@ -155,4 +158,4 @@ fviz_pca_ind(resultat_ACP,
   labs(title = "Visualisation des individus selon Cos2",
        color = "Cos2")
 ```
-
+str(Universite)

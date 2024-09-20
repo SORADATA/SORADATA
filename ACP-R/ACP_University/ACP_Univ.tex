@@ -1,0 +1,424 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={ACP\_University},
+  pdfauthor={Moussa},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{ACP\_University}
+\author{Moussa}
+\date{2024-08-18}
+
+\begin{document}
+\maketitle
+
+\hypertarget{import-of-dataset}{%
+\subparagraph{Import of dataset}\label{import-of-dataset}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(readxl)}
+\NormalTok{universite }\OtherTok{\textless{}{-}} \FunctionTok{read\_excel}\NormalTok{(}\StringTok{"\textasciitilde{}/GitHub/SORADATA/ACP{-}R/Dataset/universite.xlsx"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## New names:
+## * `` -> `...1`
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{str}\NormalTok{(universite)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## tibble [10 x 13] (S3: tbl_df/tbl/data.frame)
+##  $ ...1      : chr [1:10] "Droit, sciences politiques" "Sciences économiques, gestion" "Administration économique et sociale" "Lettres, sciences du langage, arts" ...
+##  $ Licence-F : num [1:10] 69373 38387 18574 48691 62736 ...
+##  $ Licence-H : num [1:10] 37317 37157 12388 17850 21291 ...
+##  $ Master-F  : num [1:10] 42371 29466 4183 17672 13186 ...
+##  $ Master-H  : num [1:10] 21693 26929 2884 5853 3874 ...
+##  $ Doctorat-F: num [1:10] 4029 1983 0 4531 1839 ...
+##  $ Doctorat-H: num [1:10] 4342 2552 0 2401 907 ...
+##  $ Total-F   : num [1:10] 115773 69836 22757 70894 77761 ...
+##  $ Total-H   : num [1:10] 63352 66638 15272 26104 26072 ...
+##  $ Licence   : num [1:10] 106690 75544 30962 66541 84027 ...
+##  $ Master    : num [1:10] 64064 56395 7067 23525 17060 ...
+##  $ Doctorat  : num [1:10] 8371 4535 0 6932 2746 ...
+##  $ Total     : num [1:10] 179125 136474 38029 96998 103833 ...
+\end{verbatim}
+
+\hypertarget{les-statistiques-descriptives}{%
+\paragraph{Les statistiques
+descriptives}\label{les-statistiques-descriptives}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{summary}\NormalTok{(universite)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      ...1             Licence-F       Licence-H        Master-F    
+##  Length:10          Min.   : 1779   Min.   :  726   Min.   : 1963  
+##  Class :character   1st Qu.:19570   1st Qu.:15566   1st Qu.: 5910  
+##  Mode  :character   Median :31353   Median :19571   Median :15132  
+##                     Mean   :38901   Mean   :25490   Mean   :18238  
+##                     3rd Qu.:59225   3rd Qu.:37277   3rd Qu.:26518  
+##                     Max.   :94346   Max.   :54861   Max.   :43016  
+##     Master-H       Doctorat-F       Doctorat-H         Total-F      
+##  Min.   :  811   Min.   :   0.0   Min.   :    0.0   Min.   :  4148  
+##  1st Qu.: 3948   1st Qu.: 600.8   1st Qu.:  472.8   1st Qu.: 27330  
+##  Median : 7155   Median :3006.0   Median : 2476.5   Median : 56940  
+##  Mean   :14341   Mean   :3041.8   Mean   : 3424.0   Mean   : 60181  
+##  3rd Qu.:21382   3rd Qu.:4500.0   3rd Qu.: 5009.5   3rd Qu.: 76044  
+##  Max.   :48293   Max.   :7787.0   Max.   :11491.0   Max.   :145149  
+##     Total-H          Licence           Master         Doctorat    
+##  Min.   :  1552   Min.   :  2505   Min.   : 3167   Min.   :    0  
+##  1st Qu.: 22833   1st Qu.: 33052   1st Qu.: 9565   1st Qu.: 1074  
+##  Median : 27399   Median : 71043   Median :21536   Median : 5734  
+##  Mean   : 43255   Mean   : 64391   Mean   :32579   Mean   : 6466  
+##  3rd Qu.: 65817   3rd Qu.: 82375   3rd Qu.:61696   3rd Qu.:10248  
+##  Max.   :114645   Max.   :135396   Max.   :65371   Max.   :15898  
+##      Total       
+##  Min.   :  5700  
+##  1st Qu.: 45957  
+##  Median :100416  
+##  Mean   :103436  
+##  3rd Qu.:153135  
+##  Max.   :213618
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{aggregate}\NormalTok{(Master}\SpecialCharTok{\textasciitilde{}}\NormalTok{Doctorat, }\AttributeTok{data =}\NormalTok{ universite, }\AttributeTok{FUN =}\NormalTok{ mean)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##    Doctorat Master
+## 1         0   7067
+## 2        28   3167
+## 3       516   6135
+## 4      2746  17060
+## 5      4535  56395
+## 6      6932  23525
+## 7      8371  64064
+## 8     10873  19547
+## 9     14759  63463
+## 10    15898  65371
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(ggplot2)}
+
+\CommentTok{\# Préparer les données pour ggplot}
+\NormalTok{universite\_long }\OtherTok{\textless{}{-}}\NormalTok{ tidyr}\SpecialCharTok{::}\FunctionTok{pivot\_longer}\NormalTok{(universite, }\AttributeTok{cols =} \FunctionTok{c}\NormalTok{(}\StringTok{\textasciigrave{}}\AttributeTok{Doctorat{-}F}\StringTok{\textasciigrave{}}\NormalTok{, }\StringTok{\textasciigrave{}}\AttributeTok{Doctorat{-}H}\StringTok{\textasciigrave{}}\NormalTok{, }\StringTok{\textasciigrave{}}\AttributeTok{Master{-}F}\StringTok{\textasciigrave{}}\NormalTok{, }\StringTok{\textasciigrave{}}\AttributeTok{Master{-}H}\StringTok{\textasciigrave{}}\NormalTok{), }
+                                       \AttributeTok{names\_to =} \FunctionTok{c}\NormalTok{(}\StringTok{"Niveau"}\NormalTok{, }\StringTok{"Sexe"}\NormalTok{), }\AttributeTok{names\_sep =} \StringTok{"{-}"}\NormalTok{, }\AttributeTok{values\_to =} \StringTok{"Valeurs"}\NormalTok{)}
+
+\CommentTok{\# Créer l\textquotesingle{}histogramme avec ggplot pour Doctorat et Master}
+\FunctionTok{ggplot}\NormalTok{(universite\_long, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Valeurs, }\AttributeTok{fill =}\NormalTok{ Sexe)) }\SpecialCharTok{+} 
+  \FunctionTok{geom\_histogram}\NormalTok{(}\AttributeTok{alpha =} \FloatTok{0.5}\NormalTok{, }\AttributeTok{position =} \StringTok{"identity"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{facet\_wrap}\NormalTok{(}\SpecialCharTok{\textasciitilde{}}\NormalTok{Niveau) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Comparaison Doctorat et Master par Sexe"}\NormalTok{, }\AttributeTok{x =} \StringTok{"Valeurs"}\NormalTok{, }\AttributeTok{y =} \StringTok{"Fréquence"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{scale\_fill\_manual}\NormalTok{(}\AttributeTok{values =} \FunctionTok{c}\NormalTok{(}\StringTok{"blue"}\NormalTok{, }\StringTok{"red"}\NormalTok{, }\StringTok{"green"}\NormalTok{, }\StringTok{"orange"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+\end{verbatim}
+
+\includegraphics{ACP_Univ_files/figure-latex/unnamed-chunk-5-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(ggplot2)}
+
+\CommentTok{\# Préparer les données au format long}
+\NormalTok{universite\_long }\OtherTok{\textless{}{-}}\NormalTok{ tidyr}\SpecialCharTok{::}\FunctionTok{pivot\_longer}\NormalTok{(universite, }\AttributeTok{cols =} \FunctionTok{c}\NormalTok{(}\StringTok{\textasciigrave{}}\AttributeTok{Doctorat{-}F}\StringTok{\textasciigrave{}}\NormalTok{, }\StringTok{\textasciigrave{}}\AttributeTok{Doctorat{-}H}\StringTok{\textasciigrave{}}\NormalTok{, }\StringTok{\textasciigrave{}}\AttributeTok{Master{-}F}\StringTok{\textasciigrave{}}\NormalTok{, }\StringTok{\textasciigrave{}}\AttributeTok{Master{-}H}\StringTok{\textasciigrave{}}\NormalTok{), }
+                                       \AttributeTok{names\_to =} \FunctionTok{c}\NormalTok{(}\StringTok{"Niveau"}\NormalTok{, }\StringTok{"Sexe"}\NormalTok{), }\AttributeTok{names\_sep =} \StringTok{"{-}"}\NormalTok{, }\AttributeTok{values\_to =} \StringTok{"Valeurs"}\NormalTok{)}
+
+\CommentTok{\# Créer le boxplot avec ggplot}
+\FunctionTok{ggplot}\NormalTok{(universite\_long, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =} \FunctionTok{interaction}\NormalTok{(Niveau, Sexe), }\AttributeTok{y =}\NormalTok{ Valeurs, }\AttributeTok{fill =}\NormalTok{ Sexe)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_boxplot}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Boxplot Doctorat et Master par Sexe"}\NormalTok{, }\AttributeTok{x =} \StringTok{"Niveau et Sexe"}\NormalTok{, }\AttributeTok{y =} \StringTok{"Valeurs"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{scale\_fill\_manual}\NormalTok{(}\AttributeTok{values =} \FunctionTok{c}\NormalTok{(}\StringTok{"lightblue"}\NormalTok{, }\StringTok{"lightpink"}\NormalTok{)) }\SpecialCharTok{+}
+  \FunctionTok{theme\_minimal}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{ACP_Univ_files/figure-latex/unnamed-chunk-6-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Calculer le total pour chaque filière}
+\NormalTok{total\_doctorat }\OtherTok{\textless{}{-}} \FunctionTok{sum}\NormalTok{(universite}\SpecialCharTok{$}\StringTok{\textasciigrave{}}\AttributeTok{Doctorat{-}F}\StringTok{\textasciigrave{}}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{sum}\NormalTok{(universite}\SpecialCharTok{$}\StringTok{\textasciigrave{}}\AttributeTok{Doctorat{-}H}\StringTok{\textasciigrave{}}\NormalTok{)}
+\NormalTok{total\_master }\OtherTok{\textless{}{-}} \FunctionTok{sum}\NormalTok{(universite}\SpecialCharTok{$}\StringTok{\textasciigrave{}}\AttributeTok{Master{-}F}\StringTok{\textasciigrave{}}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{sum}\NormalTok{(universite}\SpecialCharTok{$}\StringTok{\textasciigrave{}}\AttributeTok{Master{-}H}\StringTok{\textasciigrave{}}\NormalTok{)}
+
+\CommentTok{\# Calculer le total général}
+\NormalTok{total\_global }\OtherTok{\textless{}{-}}\NormalTok{ total\_doctorat }\SpecialCharTok{+}\NormalTok{ total\_master}
+
+\CommentTok{\# Calculer les proportions}
+\NormalTok{proportion\_doctorat }\OtherTok{\textless{}{-}}\NormalTok{ total\_doctorat }\SpecialCharTok{/}\NormalTok{ total\_global}
+\NormalTok{proportion\_master }\OtherTok{\textless{}{-}}\NormalTok{ total\_master }\SpecialCharTok{/}\NormalTok{ total\_global}
+
+\CommentTok{\# Créer un vecteur des proportions}
+\NormalTok{proportions }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(proportion\_doctorat, proportion\_master)}
+
+\CommentTok{\# Créer un vecteur des noms des filières}
+\NormalTok{filieres }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"Doctorat"}\NormalTok{, }\StringTok{"Master"}\NormalTok{)}
+\FunctionTok{library}\NormalTok{(ggplot2)}
+
+\CommentTok{\# Préparer les données dans un data frame}
+\NormalTok{proportions\_df }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(}
+  \AttributeTok{Filiere =}\NormalTok{ filieres,}
+  \AttributeTok{Proportion =}\NormalTok{ proportions}
+\NormalTok{)}
+
+\CommentTok{\# Créer le barplot avec ggplot2}
+\FunctionTok{ggplot}\NormalTok{(proportions\_df, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Filiere, }\AttributeTok{y =}\NormalTok{ Proportion, }\AttributeTok{fill =}\NormalTok{ Filiere)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_bar}\NormalTok{(}\AttributeTok{stat =} \StringTok{"identity"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{scale\_y\_continuous}\NormalTok{(}\AttributeTok{labels =}\NormalTok{ scales}\SpecialCharTok{::}\NormalTok{percent, }\AttributeTok{limits =} \FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{1}\NormalTok{)) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Proportions des Étudiants par niveau d\textquotesingle{}étude"}\NormalTok{, }\AttributeTok{x =} \StringTok{"Niveau d\textquotesingle{}étude"}\NormalTok{, }\AttributeTok{y =} \StringTok{"Proportion"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{scale\_fill\_manual}\NormalTok{(}\AttributeTok{values =} \FunctionTok{c}\NormalTok{(}\StringTok{"lightblue"}\NormalTok{, }\StringTok{"lightgreen"}\NormalTok{)) }\SpecialCharTok{+}
+  \FunctionTok{theme\_minimal}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{geom\_text}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{label =}\NormalTok{ scales}\SpecialCharTok{::}\FunctionTok{percent}\NormalTok{(Proportion)), }\AttributeTok{vjust =} \SpecialCharTok{{-}}\FloatTok{0.5}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{ACP_Univ_files/figure-latex/unnamed-chunk-7-1.pdf}
+
+\hypertarget{acp-via-factominer}{%
+\paragraph{ACP via FactomineR}\label{acp-via-factominer}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(FactoMineR)}
+\FunctionTok{library}\NormalTok{(}\StringTok{"factoextra"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Welcome! Want to learn more? See two factoextra-related books at https://goo.gl/ve3WBa
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Sélectionner uniquement les colonnes numériques}
+\NormalTok{numerical\_vars }\OtherTok{\textless{}{-}} \FunctionTok{sapply}\NormalTok{(universite, is.numeric)}
+
+\CommentTok{\# Créer un sous{-}data frame avec uniquement les colonnes numériques}
+\NormalTok{universite\_numeric }\OtherTok{\textless{}{-}}\NormalTok{ universite[, numerical\_vars]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{resultat\_ACP}\OtherTok{\textless{}{-}}\FunctionTok{PCA}\NormalTok{(universite\_numeric, }\AttributeTok{graph =} \ConstantTok{FALSE}\NormalTok{)}
+\FunctionTok{print}\NormalTok{(resultat\_ACP)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## **Results for the Principal Component Analysis (PCA)**
+## The analysis was performed on 10 individuals, described by 12 variables
+## *The results are available in the following objects:
+## 
+##    name               description                          
+## 1  "$eig"             "eigenvalues"                        
+## 2  "$var"             "results for the variables"          
+## 3  "$var$coord"       "coord. for the variables"           
+## 4  "$var$cor"         "correlations variables - dimensions"
+## 5  "$var$cos2"        "cos2 for the variables"             
+## 6  "$var$contrib"     "contributions of the variables"     
+## 7  "$ind"             "results for the individuals"        
+## 8  "$ind$coord"       "coord. for the individuals"         
+## 9  "$ind$cos2"        "cos2 for the individuals"           
+## 10 "$ind$contrib"     "contributions of the individuals"   
+## 11 "$call"            "summary statistics"                 
+## 12 "$call$centre"     "mean of the variables"              
+## 13 "$call$ecart.type" "standard error of the variables"    
+## 14 "$call$row.w"      "weights for the individuals"        
+## 15 "$call$col.w"      "weights for the variables"
+\end{verbatim}
+
+\hypertarget{le-choix-de-laxe-ou-de-dimension}{%
+\subsubsection{Le choix de l'axe ou de
+dimension}\label{le-choix-de-laxe-ou-de-dimension}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{valeurspropes}\OtherTok{\textless{}{-}}\NormalTok{resultat\_ACP}\SpecialCharTok{$}\NormalTok{eig}
+\NormalTok{valeurspropes}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##          eigenvalue percentage of variance cumulative percentage of variance
+## comp 1 9.008252e+00           7.506876e+01                          75.06876
+## comp 2 1.988651e+00           1.657209e+01                          91.64086
+## comp 3 8.032154e-01           6.693461e+00                          98.33432
+## comp 4 1.680335e-01           1.400279e+00                          99.73460
+## comp 5 2.304292e-02           1.920243e-01                          99.92662
+## comp 6 8.805451e-03           7.337875e-02                         100.00000
+## comp 7 1.985892e-31           1.654910e-30                         100.00000
+## comp 8 1.112184e-32           9.268203e-32                         100.00000
+## comp 9 2.901728e-33           2.418106e-32                         100.00000
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{barplot}\NormalTok{(valeurspropes[,}\DecValTok{2}\NormalTok{],}\AttributeTok{names.arg =} \DecValTok{1}\SpecialCharTok{:}\FunctionTok{nrow}\NormalTok{(valeurspropes),}
+        \AttributeTok{main =} \StringTok{"Pourcentage dela variance expliquée par chaque composante"}\NormalTok{,}
+        \AttributeTok{xlab =} \StringTok{"Composantes principales"}\NormalTok{,}
+        \AttributeTok{ylab =} \StringTok{"Pourcentage de variance expliquée"}\NormalTok{,}
+        \AttributeTok{col =} \StringTok{"steelblue"}\NormalTok{)}
+\FunctionTok{lines}\NormalTok{(}\AttributeTok{x=}\DecValTok{1}\SpecialCharTok{:}\FunctionTok{nrow}\NormalTok{(valeurspropes),valeurspropes[,}\DecValTok{2}\NormalTok{],}
+      \AttributeTok{type =} \StringTok{"b"}\NormalTok{,}\AttributeTok{pch=}\DecValTok{19}\NormalTok{,}\AttributeTok{col=}\StringTok{"red"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{ACP_Univ_files/figure-latex/unnamed-chunk-12-1.pdf}
+
+\hypertarget{le-cercle-de-corruxe9lation-ou-il-exite-un-effet-de-taille}{%
+\subsubsection{Le cercle de corrélation ou il exite un effet de
+taille}\label{le-cercle-de-corruxe9lation-ou-il-exite-un-effet-de-taille}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{fviz\_pca\_var}\NormalTok{(resultat\_ACP,}
+             \AttributeTok{col.var =} \StringTok{"cos2"}\NormalTok{, }\CommentTok{\# Coloration par le cosinus carré}
+             \AttributeTok{gradient.cols =} \FunctionTok{c}\NormalTok{(}\StringTok{"\#888AFB"}\NormalTok{,}\StringTok{"\#E78800"}\NormalTok{,}\StringTok{"\#FC4E07"}\NormalTok{), }\CommentTok{\# Définir les couleurs du gradient}
+             \AttributeTok{repel =} \ConstantTok{TRUE}\NormalTok{, }\CommentTok{\# Éviter le chevauchement des étiquettes}
+             \AttributeTok{title =} \StringTok{"Cercle de corrélation des variables"}\NormalTok{) }\CommentTok{\# Titre du graphique}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{ACP_Univ_files/figure-latex/unnamed-chunk-13-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{fviz\_pca\_ind}\NormalTok{(resultat\_ACP, }
+             \AttributeTok{col.ind =} \StringTok{"cos2"}\NormalTok{,  }\CommentTok{\# Coloration en fonction du cos2}
+             \AttributeTok{gradient.cols =} \FunctionTok{c}\NormalTok{(}\StringTok{"blue"}\NormalTok{, }\StringTok{"white"}\NormalTok{, }\StringTok{"red"}\NormalTok{),  }\CommentTok{\# Palette de couleurs}
+             \AttributeTok{repel =} \ConstantTok{TRUE}\NormalTok{) }\SpecialCharTok{+}  \CommentTok{\# Éviter le chevauchement des étiquettes}
+  \FunctionTok{scale\_color\_gradient2}\NormalTok{(}\AttributeTok{low =} \StringTok{"blue"}\NormalTok{, }\AttributeTok{mid =} \StringTok{"white"}\NormalTok{, }\AttributeTok{high =} \StringTok{"red"}\NormalTok{, }\AttributeTok{midpoint =} \FloatTok{0.50}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{theme\_minimal}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Visualisation des individus selon Cos2"}\NormalTok{,}
+       \AttributeTok{color =} \StringTok{"Cos2"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Scale for colour is already present.
+## Adding another scale for colour, which will replace the existing scale.
+\end{verbatim}
+
+\includegraphics{ACP_Univ_files/figure-latex/unnamed-chunk-14-1.pdf}
+
+\end{document}
