@@ -1,0 +1,43 @@
+# Python Training
+# Formation Python
+
+Ce dépôt contient les scripts et les résultats de ma formation en Python, basés sur le livre *Python pour les SHS*. Les sujets abordés incluent :
+- Les bases de Python
+- La manipulation des données
+- Les visualisations avec `matplotlib`
+- L'analyse statistique
+
+## Chapitre 1 : Visualization avec Python
+
+### Script : 
+
+```python
+# Importer les bibliothèques nécessaires
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Données factices pour l'exemple
+gdp_cap = [974.5803384, 5937.029525999998, 6223.367465000001, 4797.231267, 12779.37964]
+life_exp = [43.828, 76.423, 72.301, 42.731, 75.32]
+pop = [31.889923, 3.600523, 33.333216, 12.420476, 39.379224]
+col = ['red', 'green', 'blue', 'yellow', 'purple']
+
+# Scatter plot
+plt.scatter(x=gdp_cap, y=life_exp, s=np.array(pop) * 2, c=col, alpha=0.8)
+
+# Personnalisation précédente
+plt.xscale('log')
+plt.xlabel('GDP per Capita [in USD]')
+plt.ylabel('Life Expectancy [in years]')
+plt.title('World Development in 2007')
+plt.xticks([1000, 10000, 100000], ['1k', '10k', '100k'])
+
+# Ajout de texte sur le graphique
+plt.text(1550, 71, 'India')
+plt.text(5700, 80, 'China')
+
+# Ajouter une grille
+plt.grid(True)
+
+# Afficher le graphique
+plt.show()
