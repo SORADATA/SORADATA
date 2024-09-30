@@ -8,7 +8,6 @@
 
 Portfolio : https://sissokomoussa.carrd.co/
 
-![](https://github.com/SORADATA/SORADATA/blob/main/POWER-BI/Sreenshot_2.png)
 
 
 # 💻 Tech Stack:
