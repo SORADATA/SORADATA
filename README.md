@@ -1,5 +1,5 @@
 # 💫 About Me:
-👋 Hi, I’m @SORADATA<br><br>## 👀 About Me<br>I'm passionate about Data Analytics, <br>with a strong interest in tools like Power BI, <br>Tableau, and other data visualization platforms.<br> I enjoy exploring data and uncovering insights that drive <br>decision-making.
+👋 Hi, I’m SISSOKO Moussa <br><br>## 👀 About Me<br>I'm passionate about Data Analytics, <br>with a strong interest in tools like Power BI, <br>Tableau, and other data visualization platforms.<br> I enjoy exploring data and uncovering insights that drive <br>decision-making.
 
 
 ## 🌐 Socials:
