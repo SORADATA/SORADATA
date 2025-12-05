@@ -2,7 +2,7 @@
 👋 Hi, I’m SISSOKO Moussa, a Data Analyst specializing in actionable data visualization and dashboard development. <br><br>## 👀 About Me<br>I'm passionate about Data Analytics, <br>with a strong interest in tools like Power BI, <br>Tableau, and other data visualization platforms.<br> I enjoy exploring data and uncovering insights that drive <br>decision-making.
 
 
-## 🌐 Socials:
+## 🌐 colaboratings :
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://linkedin.com/in/moussa-sissoko-passioné-sciences-de-données-) 
 [![Portfolio](https://img.shields.io/badge/Portfolio-bleu?style=flat&logo=github&logoColor=white)](https://soradata.github.io/Analyst-Portfolio/)
 
