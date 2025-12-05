@@ -3,7 +3,7 @@
 
 
 ## 🌐 colaboratings :
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://linkedin.com/in/moussa-sissoko-passioné-sciences-de-données-) 
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/moussa-sissoko-data-science/) 
 [![Portfolio](https://img.shields.io/badge/Portfolio-bleu?style=flat&logo=github&logoColor=white)](https://soradata.github.io/Analyst-Portfolio/)
 
 
