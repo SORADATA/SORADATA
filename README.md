@@ -7,7 +7,6 @@
 [![Portfolio](https://img.shields.io/badge/Portfolio-bleu?style=flat&logo=github&logoColor=white)](https://soradata.github.io/Analyst-Portfolio/)
 
 
-Portfolio : https://sissokomoussa.carrd.co/
 
 
 
