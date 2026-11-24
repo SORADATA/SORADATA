@@ -9,8 +9,7 @@
 </div>
 
 ### XERJ Corpus Hub
-* **Auracontent (`auracontent--auracontent`)** : [Voir la fiche sur XERJ Corpus Hub](https://hub.xerj.org/corpus/auracontent--auracontent) — indexé au commit `3e92fb3d8d` avec mise en avant de *« carte animée « où ça se passe » (lot 1) »* (`@SORADATA`)[cite: 9].
-
+- **Auracontent (`auracontent--auracontent`)** : [Voir la fiche sur XERJ Corpus Hub](https://hub.xerj.org/corpus/auracontent--auracontent) — indexé au commit `3e92fb3d8d` avec mise en avant de *« carte animée « où ça se passe » (lot 1) »* (`@SORADATA`).
 
 ### 🛠️ Stack Technique
 
@@ -29,4 +28,3 @@
 
 ---
 [![](https://visitcount.itsvg.in/api?id=soradata&icon=0&color=0)](https://visitcount.itsvg.in)
-
