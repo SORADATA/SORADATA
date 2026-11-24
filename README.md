@@ -8,6 +8,9 @@
   <a href="mailto:sissokomoussa611@gmail.com"><img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" /></a>
 </div>
 
+### XERJ Corpus Hub
+* **Auracontent (`auracontent--auracontent`)** : [Voir la fiche sur XERJ Corpus Hub](https://hub.xerj.org/corpus/auracontent--auracontent) — indexé au commit `3e92fb3d8d` avec mise en avant de *« carte animée « où ça se passe » (lot 1) »* (`@SORADATA`)[cite: 9].
+
 
 ### 🛠️ Stack Technique
 
